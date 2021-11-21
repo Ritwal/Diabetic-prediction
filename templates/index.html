@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic prediction</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Predict Diabetic Analysis</h1>
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"method="post">
+            <label for="Pregnancies">Enter your Pregnancies: </label>
+            <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" /><br><br>
+
+            <label for="Glucose">Enter your Glucose: </label>
+            <input type="text" name="Glucose" placeholder="Glucose" required="required" /><br><br>
+
+            <label for="BloodPressure">Enter your BloodPressure Value: </label>
+            <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" /><br><br>
+
+            <label for="SkinThickness">Enter your SkinThickness: </label>
+            <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" /><br><br>
+
+            <label for="Insulin">Enter your Insulin value: </label>
+            <input type="text" name="Insulin" placeholder="Insulin" required="required" /><br><br>
+
+            <label for="BMI">Enter your BMI value: </label>
+            <input type="text" name="BMI" placeholder="BMI" required="required" /><br><br>
+
+            <label for="DiabetesPedigreeFunction">Enter your DiabetesPedigreeFunction: </label>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" /><br><br>
+
+            <label for="Age">Enter your Age in years: </label>
+            <input type="text" name="Age" placeholder="Age" required="required" /><br><br>
+        
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+    
+     </div>
+</body>
+</html>
